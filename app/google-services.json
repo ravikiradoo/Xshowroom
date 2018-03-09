@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "590634989235",
+    "firebase_url": "https://xshowroom-69af9.firebaseio.com",
+    "project_id": "xshowroom-69af9",
+    "storage_bucket": "xshowroom-69af9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590634989235:android:05fb7ac137a382fb",
+        "android_client_info": {
+          "package_name": "com.example.xshowroom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "590634989235-ks0k2l3lqgb9ijnfe04596g5609j6fcm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAcedoCiAig20CHb1YJjsurL9BKiS1hRw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
