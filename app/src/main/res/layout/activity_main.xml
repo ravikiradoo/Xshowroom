@@ -29,19 +29,21 @@
         android:layout_height="wrap_content"
         android:text="Welcome"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
         android:layout_marginLeft="20dp"
         android:textSize="30sp"
         android:textColor="@android:color/black"
         android:layout_marginTop="19dp"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.473" />
+        app:layout_constraintHorizontal_bias="0.473"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="8dp" />
 
 
     <LinearLayout
         android:id="@+id/l1"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
 
         android:layout_marginLeft="10dp"
@@ -52,7 +54,9 @@
         android:padding="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
 
 
         <EditText
@@ -86,8 +90,9 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/button"
             android:text="Sign In!"
-            android:textColor="#ffff" />
-        
+            android:textColor="#ffff"
+            android:onClick="SignIn"/>
+
     </LinearLayout>
 
 

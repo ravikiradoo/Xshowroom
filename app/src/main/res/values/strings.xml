@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Xshowroom</string>
+    <string-array name="array1">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string name="prompt">Choose Sex</string>
 </resources>
