@@ -14,12 +14,14 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class catalogue extends AppCompatActivity {
     Toolbar toolbar;
     RecyclerView recyclerView;
     ProgressDialog dialog;
     ArrayList<Bike> bikes;
+    Radapter radapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +31,13 @@ public class catalogue extends AppCompatActivity {
         setSupportActionBar(toolbar);
         bikes=new ArrayList<Bike>();
         recyclerView=(RecyclerView)findViewById(R.id.rv);
-        new BikeData().execute();
+        recyclerView.hasFixedSize();
+        radapter=new Radapter(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new Radapter(bikes));
+        recyclerView.setAdapter(radapter);
+        new BikeData().execute();
+
+
 
     }
     class BikeData extends AsyncTask<Void,Void,String> {
@@ -71,10 +77,11 @@ public class catalogue extends AppCompatActivity {
                     }
                     else
                     {
-                        
-                        JSONObject Data  = new JSONArray(s);
-                        JSONArray jsonArray=new JSONArray(Data);
-                        Toast.makeText(catalogue.this,s,Toast.LENGTH_LONG).show();
+                        String jsonString="{ Data:"+s+"}";
+
+                        JSONObject Data=new JSONObject(jsonString);
+                        JSONArray jsonArray=Data.getJSONArray("Data");
+
                         for(int i=0;i<jsonArray.length();i++) {
                             JSONObject jsonObject=jsonArray.getJSONObject(i);
                             String Brand = jsonObject.getString("Brand");
@@ -86,11 +93,19 @@ public class catalogue extends AppCompatActivity {
                             String Gears = jsonObject.getString("Gears");
                             String Engine = jsonObject.getString("Engine");
                             String Electric_start = jsonObject.getString("Electric_start");
-                            ArrayList<String> images = null;
+
+                            String im=jsonObject.getString("Images");
+                            String im_string=im.substring(1,im.length()-1);
+                            String image_array[]=im_string.split(",");
+                            ArrayList<String> images = new ArrayList<String>(Arrays.asList(image_array));
+
 
                             Bike bike = new Bike(Model, Brand, Color, Mileage, Fuel, Electric_start, Engine, Price, images);
                             bikes.add(bike);
+
                         }
+
+                        radapter.setData(bikes);
                     }
 
                 } catch (Exception e) {
