@@ -71,7 +71,7 @@ public class catalogue extends AppCompatActivity {
                     }
                     else
                     {
-                        
+
                         JSONObject Data  = new JSONArray(s);
                         JSONArray jsonArray=new JSONArray(Data);
                         Toast.makeText(catalogue.this,s,Toast.LENGTH_LONG).show();
