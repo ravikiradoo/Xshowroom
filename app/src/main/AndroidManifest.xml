@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".Content" />
         <activity android:name=".Customer" />
-        <activity android:name=".catalogue"></activity>
+        <activity android:name=".catalogue" />
+        <activity android:name=".Product"></activity>
     </application>
 
 </manifest>
