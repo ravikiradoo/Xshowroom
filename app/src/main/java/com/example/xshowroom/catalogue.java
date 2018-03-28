@@ -100,7 +100,7 @@ public class catalogue extends AppCompatActivity {
                             ArrayList<String> images = new ArrayList<String>(Arrays.asList(image_array));
 
 
-                            Bike bike = new Bike(Model, Brand, Color, Mileage, Fuel, Electric_start, Engine, Price, images);
+                            Bike bike = new Bike(Model, Brand, Color, Mileage, Fuel, Electric_start, Engine, Price, images,Gears);
                             bikes.add(bike);
 
                         }

@@ -59,7 +59,7 @@ public class SwipeAdapter extends PagerAdapter {
         ImageView imageView = (ImageView)itemview.findViewById(R.id.imageView2);
         String im=images.get(position);
         String url="http://ravi18.pythonanywhere.com/media/Images/" +im.substring(1,im.length()-1);
-        Toast.makeText(context,url,Toast.LENGTH_LONG).show();
+
 
         new ImageLoadTask(url,imageView).execute();
         container.addView(itemview);
@@ -111,7 +111,6 @@ public class SwipeAdapter extends PagerAdapter {
             super.onPostExecute(result);
             imageView.setImageBitmap(result);
 
-            Toast.makeText(context,"s",Toast.LENGTH_LONG).show();
         }
 
     }
