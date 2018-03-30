@@ -1,7 +1,9 @@
 package com.example.xshowroom;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -11,12 +13,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Content extends AppCompatActivity {
    Toolbar toolbar;
     TabLayout tabLayout;
     ViewPager viewPager;
     TabsPageAdapter tabsPageAdapter;
+    ProgressDialog dialog;
+    ArrayList<Lead> leads;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,4 +76,6 @@ public class Content extends AppCompatActivity {
         Intent intent = new Intent(Content.this,Customer.class);
         startActivity(intent);
     }
+
+
 }
