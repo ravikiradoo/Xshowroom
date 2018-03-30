@@ -21,7 +21,8 @@
         <activity android:name=".Content" />
         <activity android:name=".Customer" />
         <activity android:name=".catalogue" />
-        <activity android:name=".Product"></activity>
+        <activity android:name=".Product" />
+        <activity android:name=".CreateLead"></activity>
     </application>
 
 </manifest>

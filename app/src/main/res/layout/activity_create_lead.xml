@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/cell"
+    android:padding="10dp"
+    android:layout_margin="20dp"
+    tools:context="com.example.xshowroom.CreateLead">
+
+    <TextView
+        android:id="@+id/crn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="CRN :"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/crnvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1234567890"
+
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toRightOf="@+id/crn"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/asset"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Asset Id :"
+
+        android:layout_marginLeft="8dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crn"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/assetvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1234567890"
+        android:textSize="20sp"
+
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toRightOf="@+id/asset"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/crnvalue"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/revenue"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Revenue :"
+
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="8dp"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/asset"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/revenuevalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1234567890"
+        android:textSize="20sp"
+
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toRightOf="@+id/revenue"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/assetvalue"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/pdate"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:text="Purchased Date :"
+
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="8dp"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/revenue"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/PDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1234567890"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/pdate"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toRightOf="@+id/pdate"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/revenuevalue"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/ddate"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Delivery Date :"
+
+        android:layout_marginLeft="8dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pdate"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp" />
+    <TextView
+        android:id="@+id/Ddate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1234567890"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ddate"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toRightOf="@+id/ddate"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/PDate"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="20dp"
+        android:textColor="@android:color/black"
+        android:layout_height="20dp"
+        app:srcCompat="@drawable/cal"
+        android:layout_margin="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/Ddate"
+        app:layout_constraintTop_toBottomOf="@+id/PDate"/>
+
+    <TextView
+        android:id="@+id/Payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mode Of Payment"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+
+        app:layout_constraintLeft_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/ddate"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/Payment"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Payment"
+        android:layout_margin="15dp"
+        android:tooltipText="@string/prompt"
+        android:prompt="@string/prompt"
+        android:entries="@array/array2"
+
+        />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Proceed to Checkout"
+        android:layout_margin="10dp"
+        android:textColor="#fff"
+        android:background="#e53935"
+        android:onClick="CreateLead"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Payment"
+        app:layout_constraintRight_toRightOf="parent"
+
+         />
+</android.support.constraint.ConstraintLayout>

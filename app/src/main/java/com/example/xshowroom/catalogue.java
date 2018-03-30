@@ -72,7 +72,7 @@ public class catalogue extends AppCompatActivity {
                 try {
                     if(s.equals(""))
                     {
-                        Toast.makeText(catalogue.this,"Somthing went wrong",Toast.LENGTH_LONG).show();
+                        Toast.makeText(catalogue.this,"Something went wrong",Toast.LENGTH_LONG).show();
 
                     }
                     else
@@ -93,6 +93,7 @@ public class catalogue extends AppCompatActivity {
                             String Gears = jsonObject.getString("Gears");
                             String Engine = jsonObject.getString("Engine");
                             String Electric_start = jsonObject.getString("Electric_start");
+                            String AssetId=jsonObject.getString("AssetId");
 
                             String im=jsonObject.getString("Images");
                             String im_string=im.substring(1,im.length()-1);
@@ -100,7 +101,7 @@ public class catalogue extends AppCompatActivity {
                             ArrayList<String> images = new ArrayList<String>(Arrays.asList(image_array));
 
 
-                            Bike bike = new Bike(Model, Brand, Color, Mileage, Fuel, Electric_start, Engine, Price, images,Gears);
+                            Bike bike = new Bike(Model, Brand, Color, Mileage, Fuel, Electric_start, Engine, Price, images,Gears,AssetId);
                             bikes.add(bike);
 
                         }
@@ -115,7 +116,7 @@ public class catalogue extends AppCompatActivity {
             }
             else
             {
-                Toast.makeText(catalogue.this,"Somthing went wrong",Toast.LENGTH_LONG).show();
+                Toast.makeText(catalogue.this,"Something went wrong",Toast.LENGTH_LONG).show();
             }
             dialog.dismiss();
         }

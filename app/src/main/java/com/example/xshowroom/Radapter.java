@@ -102,6 +102,7 @@ public class Radapter extends RecyclerView.Adapter<Radapter.Rviewholder> {
             intent.putExtra("model",bike.Model);
             intent.putExtra("price",bike.Price);
             intent.putExtra("gears",bike.Gears);
+            intent.putExtra("assetId",bike.AssetId);
             context.startActivity(intent);
         }
     }

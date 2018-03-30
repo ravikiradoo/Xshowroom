@@ -4,5 +4,13 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
+
+    <string-array name="array2">
+        <item >Cash</item>
+        <item>Cheque</item>
+        <item>EMI</item>
+        <item>Debit Card</item>
+        <item>Credit Card</item>
+    </string-array>
     <string name="prompt">Choose Sex</string>
 </resources>

@@ -22,6 +22,7 @@ public class Networking {
     private static String login_url ="http://ravi18.pythonanywhere.com/api/login";
     private static String  customer_url =  "http://ravi18.pythonanywhere.com/api/customer";
     private static String  bike_url =  "http://ravi18.pythonanywhere.com/api/bikes";
+    private static String  lead_url =  "http://ravi18.pythonanywhere.com/api/createLead";
    static URL url;
 
     public static String GetData(String query)
@@ -102,6 +103,31 @@ public class Networking {
     }
 
 
+    public static String CreateLead(String query)
+    {
+        String result="";
 
+        try {
+            url=new URL(lead_url);
+            HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+            urlConnection.setRequestMethod("POST");
+            Writer writer = new OutputStreamWriter(urlConnection.getOutputStream());
+            writer.write(query);
+            writer.flush();
+            writer.close();
+            InputStream inputStream = urlConnection.getInputStream();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            String line="";
+            while ((line=bufferedReader.readLine())!=null)
+            {
+                result=result+line;
+            }
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 
 }

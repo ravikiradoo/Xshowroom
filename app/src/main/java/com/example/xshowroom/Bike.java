@@ -17,10 +17,11 @@ public class Bike {
     public String Engine;
     public String Price;
     public String Gears;
+    public String AssetId;
     public ArrayList<String> Images;
 
     public Bike(String model,String brand, String color, String mileage, String fuel, String electricStart,
-                String engine,String price, ArrayList<String> images,String gears)
+                String engine,String price, ArrayList<String> images,String gears,String assetId)
     {
      Model=model;
      Brand =brand;
@@ -32,7 +33,7 @@ public class Bike {
      Price=price;
      Images=images;
         Gears=gears;
-
+      AssetId=assetId;
     }
 
 
