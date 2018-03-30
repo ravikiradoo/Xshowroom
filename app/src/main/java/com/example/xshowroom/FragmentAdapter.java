@@ -36,8 +36,10 @@ public class FragmentAdapter extends RecyclerView.Adapter<FragmentAdapter.viewho
     public void onBindViewHolder(viewholder holder, int position) {
 
         Lead lead=leads.get(position);
-        String title=lead.title;
-        holder.title.setText(title);
+        String oname=lead.oname;
+        holder.oname.setText(oname);
+        holder.revenue.setText(lead.revenue);
+        holder.revenue.setText(lead.date);
 
     }
 
@@ -58,10 +60,15 @@ public class FragmentAdapter extends RecyclerView.Adapter<FragmentAdapter.viewho
 
     public static class viewholder extends RecyclerView.ViewHolder
     {
-        TextView title;
+        TextView oname;
+        TextView revenue;
+        TextView date;
         public viewholder(View itemView) {
             super(itemView);
-            title=(TextView)itemView.findViewById(R.id.title);
+            oname=(TextView)itemView.findViewById(R.id.onamevalue);
+            date=(TextView)itemView.findViewById(R.id.closingDate);
+            revenue=(TextView)itemView.findViewById(R.id.revvalue);
+
         }
     }
 }

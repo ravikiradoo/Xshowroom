@@ -6,10 +6,14 @@ package com.example.xshowroom;
 
 public class Lead {
 
-    String title;
+    String oname;
+    String date;
+    String revenue;
 
-    public Lead(String title)
+    public Lead(String oname,String rev,String cd)
     {
-        this.title=title;
+        this.oname=oname;
+        date=cd;
+        revenue=rev;
     }
 }

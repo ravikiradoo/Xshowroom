@@ -88,8 +88,10 @@ public class UpcomingFragment extends Fragment {
 
                         for(int i=0;i<jsonArray.length();i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            String title=jsonObject.getString("OName");
-                            Lead lead=new Lead(title);
+                            String oname=jsonObject.getString("OName");
+                            String revenue=jsonObject.getString("Revenue");
+                            String date=jsonObject.getString("DeliveryDate");
+                            Lead lead=new Lead(oname,revenue,date);
                             leads.add(lead);
 
                         }
