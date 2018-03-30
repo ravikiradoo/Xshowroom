@@ -62,6 +62,7 @@ String Crn="1521099687";
         intent.putExtra("Crn",Crn);
         intent.putExtra("AssetId",AssetId);
         intent.putExtra("Revenue",extras.getString("price"));
+        intent.putExtra("Oname",extras.getString("brand")+" "+extras.getString("model"));
         startActivity(intent);
     }
 }

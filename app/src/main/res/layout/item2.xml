@@ -1,10 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
         android:layout_width="wrap_content"
-        android:id="@+id/title"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/oname"
+            android:textSize="30sp"
+            android:text="Tvs Appache"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/closing"
+            android:textSize="20sp"
+            android:text="Closing Date"
+            android:layout_margin="10dp"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/oname"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/closingDate"
+            android:textSize="20sp"
+            android:text="30/03/2018"
+            android:layout_margin="10dp"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/closing"
+            app:layout_constraintBaseline_toBaselineOf="@+id/closing"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/rev"
+            android:textSize="20sp"
+            android:text="Revenue"
+            android:layout_margin="10dp"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/closing"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/revvalue"
+            android:textSize="20sp"
+            android:text="1,20,000"
+            android:layout_margin="10dp"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/rev"
+            app:layout_constraintBaseline_toBaselineOf="@+id/rev"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#0000"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp" />
 
 </LinearLayout>

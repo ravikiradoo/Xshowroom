@@ -47,6 +47,8 @@ public class CreateLead extends AppCompatActivity {
         textView=(TextView)findViewById(R.id.Ddate);
         textView.setText(date);
         ImageView imageView=(ImageView)findViewById(R.id.imageView4);
+        textView=(TextView)findViewById(R.id.onamevalue);
+        textView.setText(extras.getString("Oname"));
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,8 +89,10 @@ public class CreateLead extends AppCompatActivity {
         String  userid=sharedPreferences.getString("Userid","");
         Spinner spinner=(Spinner)findViewById(R.id.spinner2);
         String mop=spinner.getSelectedItem().toString();
+        textView=(TextView)findViewById(R.id.onamevalue);
+        String oname=textView.getText().toString();
         String query="Account="+userid+"&Crn="+crn+"&Revenue="+revenue+"&Stage=open&AssetId="+asset+"&PurchaseDate="+date
-                +"&DeliveryDate="+Ddate+"&MOP="+mop;
+                +"&DeliveryDate="+Ddate+"&MOP="+mop+"&OName="+oname;
         new Lead().execute(query);
     }
 
