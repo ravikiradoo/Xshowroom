@@ -2,6 +2,8 @@ package com.example.xshowroom;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -12,15 +14,26 @@ import android.widget.TextView;
 
 public class Content extends AppCompatActivity {
    Toolbar toolbar;
+    TabLayout tabLayout;
+    ViewPager viewPager;
+    TabsPageAdapter tabsPageAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content);
         Bundle extras = getIntent().getExtras();
-
-
-
         toolbar=(Toolbar)findViewById(R.id.toolbar);
+        tabLayout=(TabLayout) findViewById(R.id.tabLayout);
+        viewPager=(ViewPager)findViewById(R.id.viewPager2);
+        tabsPageAdapter=new TabsPageAdapter(getSupportFragmentManager());
+
+        tabsPageAdapter.AddFragment(new UpcomingFragment(),"Upcoming");
+        tabsPageAdapter.AddFragment(new Completed(),"Completed");
+
+        viewPager.setAdapter(tabsPageAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+
         setSupportActionBar(toolbar);
     }
 
