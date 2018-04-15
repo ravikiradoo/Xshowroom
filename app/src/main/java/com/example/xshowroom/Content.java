@@ -76,6 +76,10 @@ public class Content extends AppCompatActivity {
         Intent intent = new Intent(Content.this,Customer.class);
         startActivity(intent);
     }
-
+    public void Dashboard(View view)
+    {
+        Intent intent = new Intent(Content.this,Dashboard.class);
+        startActivity(intent);
+    }
 
 }

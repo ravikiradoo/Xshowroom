@@ -46,6 +46,7 @@ String Crn="1521099687";
         textView=(TextView)findViewById(R.id.pricevalue);
         textView.setText(extras.getString("price"));
         AssetId=extras.getString("assetId");
+        Crn=extras.getString("Crn");
 
 
         viewPager=(ViewPager)findViewById(R.id.viewpager);

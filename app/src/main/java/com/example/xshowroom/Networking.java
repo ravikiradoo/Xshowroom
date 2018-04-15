@@ -24,6 +24,7 @@ public class Networking {
     private static String  bike_url =  "http://ravi18.pythonanywhere.com/api/bikes";
     private static String  lead_url =  "http://ravi18.pythonanywhere.com/api/createLead";
     private static String  get_lead_url =  "http://ravi18.pythonanywhere.com/api/Leads";
+    private  static String cust_get_url="http://ravi18.pythonanywhere.com/api/Customer";
    static URL url;
 
     public static String GetData(String query)
@@ -65,6 +66,29 @@ public class Networking {
             writer.write(query);
             writer.flush();
             writer.close();
+            InputStream inputStream = urlConnection.getInputStream();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            String line="";
+            while ((line=bufferedReader.readLine())!=null)
+            {
+                result=result+line;
+            }
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public static String GetCustData(String query)
+    {
+        String result="";
+
+        try {
+            url=new URL(cust_get_url+"/"+query);
+            HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+            urlConnection.setRequestMethod("GET");
             InputStream inputStream = urlConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String line="";
@@ -152,5 +176,26 @@ public class Networking {
         }
         return result;
     }
+    public static String ChartingData(String query)
+    {
+        String result="";
 
+        try {
+            url=new URL(query);
+            HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+            urlConnection.setRequestMethod("GET");
+            InputStream inputStream = urlConnection.getInputStream();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            String line="";
+            while ((line=bufferedReader.readLine())!=null)
+            {
+                result=result+line;
+            }
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 }

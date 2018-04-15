@@ -8,7 +8,8 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="#EEEEEE"
+        android:background="@drawable/back"
+        android:layout_margin="3dp"
         android:layout_height="wrap_content">
 
         <ImageView
@@ -38,14 +39,14 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:paddingLeft="2dp"
                 android:fontFamily="serif-monospace"
+                android:paddingLeft="2dp"
                 android:text="Model Name"
+
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
 
-                android:singleLine="true"
                 />
 
 
@@ -70,7 +71,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#0000"
+
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp" />
 

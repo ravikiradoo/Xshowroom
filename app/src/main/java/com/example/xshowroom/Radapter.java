@@ -26,10 +26,12 @@ public class Radapter extends RecyclerView.Adapter<Radapter.Rviewholder> {
 
     public ArrayList<Bike> BikeList;
     Context context;
+    String crn;
 
-    public Radapter(Context context)
+    public Radapter(Context context,String Crn)
     {
         this.context=context;
+        this.crn=Crn;
     }
 
     public void setData(ArrayList<Bike> list)
@@ -103,6 +105,7 @@ public class Radapter extends RecyclerView.Adapter<Radapter.Rviewholder> {
             intent.putExtra("price",bike.Price);
             intent.putExtra("gears",bike.Gears);
             intent.putExtra("assetId",bike.AssetId);
+            intent.putExtra("Crn",crn);
             context.startActivity(intent);
         }
     }

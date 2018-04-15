@@ -24,6 +24,7 @@ public class catalogue extends AppCompatActivity {
     Radapter radapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Bundle extras = getIntent().getExtras();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalogue);
         toolbar=(Toolbar)findViewById(R.id.toolbar);
@@ -32,7 +33,7 @@ public class catalogue extends AppCompatActivity {
         bikes=new ArrayList<Bike>();
         recyclerView=(RecyclerView)findViewById(R.id.rv);
         recyclerView.hasFixedSize();
-        radapter=new Radapter(this);
+        radapter=new Radapter(this,extras.getString("Crn"));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(radapter);
         new BikeData().execute();

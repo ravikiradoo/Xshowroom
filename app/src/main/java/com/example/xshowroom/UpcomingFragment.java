@@ -16,7 +16,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by CUBASTION on 30-03-2018.
@@ -91,17 +94,35 @@ public class UpcomingFragment extends Fragment {
                             String oname=jsonObject.getString("OName");
                             String revenue=jsonObject.getString("Revenue");
                             String date=jsonObject.getString("DeliveryDate");
-                            Lead lead=new Lead(oname,revenue,date);
-                            leads.add(lead);
+                            String crn=jsonObject.getString("Crn");
+                            String Stage=jsonObject.getString("Stage");
+                            String AssetId=jsonObject.getString("AssetId");
+                            String mop=jsonObject.getString("MOP");
+                            String pdate=jsonObject.getString("PurchaseDate");
+                            Lead lead=new Lead(oname,revenue,date,Stage,mop,crn,AssetId,pdate);
+                            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                            Date strDate = sdf.parse(date);
+                            if (!new Date().after(strDate)) {
+                                leads.add(lead);
+                            }
+
+
 
                         }
+                        fragmentAdapter.setData(leads);
                     }
 
 
                 } catch (JSONException e) {
                     e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
                 }
 
+            }
+            else
+            {
+                Toast.makeText(getActivity(),"Something went wrong",Toast.LENGTH_LONG).show();
             }
             dialog.dismiss();
         }

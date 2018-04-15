@@ -22,7 +22,9 @@
         <activity android:name=".Customer" />
         <activity android:name=".catalogue" />
         <activity android:name=".Product" />
-        <activity android:name=".CreateLead"></activity>
+        <activity android:name=".CreateLead" />
+        <activity android:name=".LeadDetails" />
+        <activity android:name=".Dashboard"></activity>
     </application>
 
 </manifest>
